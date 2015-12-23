@@ -22,15 +22,15 @@ public class MainActivity extends Activity {
 	
 	public void go(View v) throws URISyntaxException {
 		new ChooserDialog.Builder(this)
-		.setTitle("ÇëÑ¡Ôñ")
-		.addIntent(Intent.getIntent("intent://map/direction?origin=latlng:34.264642646862,108.95108518068|name:ÎÒ¼Ò&destination=´óÑãËş&mode=driving&region=Î÷°²&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end"))
-//		.addIntent(Intent.getIntent("intent://map/marker?location=40.047669,116.313082&title=ÎÒµÄÎ»ÖÃ&content=°Ù¶È¿ü¿Æ´óÏÃ&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end"))
+		.setTitle("è¯·é€‰æ‹©")
+		.addIntent(Intent.getIntent("intent://map/direction?origin=latlng:34.264642646862,108.95108518068|name:æˆ‘å®¶&destination=å¤§é›å¡”&mode=driving&region=è¥¿å®‰&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end"))
+//		.addIntent(Intent.getIntent("intent://map/marker?location=40.047669,116.313082&title=æˆ‘çš„ä½ç½®&content=ç™¾åº¦å¥ç§‘å¤§å¦&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end"))
 		.addIntent(new Intent().setAction("android.intent.action.VIEW").addCategory("android.intent.category.DEFAULT").setData(Uri.parse("androidamap://viewMap?sourceApplication=appname&poiname=abc&lat=36.2&lon=116.1&dev=0")).setPackage("com.autonavi.minimap"))
 		.setOnNoAppMatchListener(new OnNoAppMatchListener() {
 			
 			@Override
 			public void onNoAppMatch() {
-				Toast.makeText(MainActivity.this, "ÊµÔÚÃ»ÕÒµ½", Toast.LENGTH_LONG).show();
+				Toast.makeText(MainActivity.this, "å®åœ¨æ²¡æ‰¾åˆ°", Toast.LENGTH_LONG).show();
 			}
 		})
 		.create()
@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
 	}
 	
 	public void baidu(View v) throws URISyntaxException {
-//		Intent intent = Intent.getIntent("intent://map/direction?origin=latlng:34.264642646862,108.95108518068|name:ÎÒ¼Ò&destination=´óÑãËş&mode=driving&region=Î÷°²&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
-		Intent intent = Intent.getIntent("intent://map/direction?origin=latlng:39.991255,116.514222|name:ÎÒµÄÎ»ÖÃ&destination=latlng:39.904899,116.499342|name:±±¾©³¯ÑôÇø°Ù×ÓÍå12ºÅ´ó³É¹ú¼Ê¹«Ô¢3ºÅÂ¥&coord_type=bd09&mode=driving&referer=com.menu|menu&src=tujia|tujia#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
+//		Intent intent = Intent.getIntent("intent://map/direction?origin=latlng:34.264642646862,108.95108518068|name:æˆ‘å®¶&destination=å¤§é›å¡”&mode=driving&region=è¥¿å®‰&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
+		Intent intent = Intent.getIntent("intent://map/direction?origin=latlng:39.991255,116.514222|name:æˆ‘çš„ä½ç½®&destination=latlng:39.904899,116.499342|name:åŒ—äº¬æœé˜³åŒºç™¾å­æ¹¾12å·å¤§æˆå›½é™…å…¬å¯“3å·æ¥¼&coord_type=bd09&mode=driving&referer=com.menu|menutuji;scheme=bdapp;package=com.baidu.BaiduMap;end");
 		if (intent.resolveActivity(getPackageManager()) != null) {
 			startActivity(intent);
 		}
